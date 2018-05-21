@@ -1,0 +1,14 @@
+<% @orders.each do |order| %>
+    <% if order.customer && order.flower %>
+        <tr>
+         <td><%=order.customer.name%></td>
+          <td><%=order.customer.address%></td>
+          <td><%=order.customer.email%></td>
+          <td><%=order.flower.name%></td>
+          <td><%=order.status%> <btn class="btn btn-success">Update status</btn></td>
+          <td><%=order.quantity%></td>
+          <td><%=order.flower.price%> USD</td>
+          <td><%=order.flower.price * order.quantity%> USD</td>
+        </tr>
+    <%end%>
+<%end%>        
