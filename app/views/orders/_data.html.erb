@@ -5,10 +5,18 @@
           <td><%=order.customer.address%></td>
           <td><%=order.customer.email%></td>
           <td><%=order.flower.name%></td>
-          <td><%=order.status%> <btn class="btn btn-success">Update status</btn></td>
+          <td><%=order.status%></td>
+          <td> 
+           <%=form_for order, url: order_path(order), method: :put do |f| %>
+               <%= f.select :status, options_for_select(["Delivered", "Pending"]), {}, class: "form-control form-control-sm" %>
+               <br>
+               <%= f.submit "Update", method: :put, class: "btn btn-success btn-sm mt-2 mx-2"%>
+           <%end%>
+           </td>
           <td><%=order.quantity%></td>
           <td><%=order.flower.price%> USD</td>
           <td><%=order.flower.price * order.quantity%> USD</td>
         </tr>
+        
     <%end%>
 <%end%>        

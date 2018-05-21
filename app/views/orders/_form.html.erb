@@ -1,0 +1,5 @@
+<%=form_for @order, method: :put, remote: true do |f| %>
+   <%= f.select :status, ['pending', 'delivered'], class: "form-control" %>
+   <br>
+   <%= f.submit "Update", method: :put, remote: true, class: "btn btn-success btn-sm"%>
+<%end%>

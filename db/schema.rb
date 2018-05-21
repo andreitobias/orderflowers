@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180521172850) do
+ActiveRecord::Schema.define(version: 20180521213833) do
 
   create_table "customers", force: :cascade do |t|
     t.string   "name"
@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 20180521172850) do
   create_table "orders", force: :cascade do |t|
     t.integer  "customer_id"
     t.integer  "flower_id"
-    t.string   "status",      default: "pending"
+    t.string   "status"
     t.integer  "quantity"
     t.datetime "created_at"
     t.datetime "updated_at"
