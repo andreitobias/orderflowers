@@ -34,5 +34,6 @@ module FlowersApi
     config.time_zone = 'Bucharest'
     config.active_record.default_timezone = :local 
     config.active_record.raise_in_transactional_callbacks = true
+    config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
   end
 end
