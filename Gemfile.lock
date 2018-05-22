@@ -100,6 +100,7 @@ GEM
     nokogiri (1.8.2)
       mini_portile2 (~> 2.3.0)
     popper_js (1.12.9)
+    puma (3.11.4)
     rack (1.6.10)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -205,6 +206,7 @@ DEPENDENCIES
   haml
   jbuilder (~> 2.0)
   jquery-rails
+  puma
   rails (= 4.2.5)
   rspec-rails (~> 3.7)
   sass-rails (~> 5.0)

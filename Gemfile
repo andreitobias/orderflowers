@@ -31,6 +31,8 @@ gem 'bootstrap', '~> 4.1.1'
 gem 'fast_jsonapi'
 #Use FontAwesome
 gem "font-awesome-rails"
+#use Puma
+gem 'puma'
 
 
 # Use ActiveModel has_secure_password

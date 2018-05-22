@@ -12,7 +12,7 @@ module Api
             def create
                 order = Order.new(order_params)
                 
-                if order.flower_id <= Flower.count && order.customer_id <= Customer.count      
+                if Flower.exists?(params[:flower_id]) && Customer.exists?(params[:customer_id])   
                     order.save
                     render json: {status: 'SUCCESS', message: 'Order Created', data: order}, status: :ok
                 else
