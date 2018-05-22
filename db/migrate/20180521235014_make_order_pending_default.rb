@@ -1,5 +1,5 @@
 class MakeOrderPendingDefault < ActiveRecord::Migration
-  def change
+   def change
     change_column :orders, :status, :string, :default => "pending"
-  end
+   end
 end
