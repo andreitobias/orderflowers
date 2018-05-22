@@ -25,6 +25,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 #Use haml
 gem 'haml'
+#use html2haml
+gem 'html2haml'
+
 #Use Bootstrap
 gem 'bootstrap', '~> 4.1.1'
 #Use fast_jsonapi
@@ -33,6 +36,8 @@ gem 'fast_jsonapi'
 gem "font-awesome-rails"
 #use Puma
 gem 'puma'
+#Use DataTables
+gem 'jquery-datatables-rails', '~> 3.4.0'
 
 
 # Use ActiveModel has_secure_password
