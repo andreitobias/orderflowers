@@ -3,8 +3,12 @@ source 'https://rubygems.org'
 ruby '2.3.4'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+
+group :production do
+  gem 'pg', '0.20.0'
+  gem 'rails_12factor'
+end
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -55,6 +59,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.7'
   gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
   gem 'shoulda-matchers', '~> 3.1'
+  gem 'sqlite3'
 end
 
 group :development do
@@ -65,8 +70,5 @@ group :development do
   gem 'spring'
 end
 
-group :production do
-  gem 'pg', '0.20.0'
-  gem 'rails_12factor'
-end
+
 
