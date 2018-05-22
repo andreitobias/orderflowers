@@ -1,0 +1,65 @@
+.content-wrapper
+  - flash.each do |key, value|
+    = content_tag :div, value, class: "col-6 offset-3 alert alert-#{key}"
+  .container-fluid
+    / Icon Cards
+    .row
+      .col-xl-3.col-sm-6.mb-3
+        .card.text-white.bg-success.o-hidden.h-100
+          .card-body
+            .card-body-icon
+              %i.fa.fa-fw.fa-shopping-cart
+            .mr-5
+              There are #{Order.count} Orders!
+          %a.card-footer.text-white.clearfix.small.z-1{:href => "#"}
+            %span.float-left View Details
+            %span.float-right
+              %i.fa.fa-angle-right
+      .col-xl-3.col-sm-6.mb-3
+        .card.text-white.bg-danger.o-hidden.h-100
+          .card-body
+            .card-body-icon
+              %i.fa.fa-fw.fa-support
+            .mr-5
+              = @orders.where(status: 'pending').count
+              Pending Orders!
+          %a.card-footer.text-white.clearfix.small.z-1{:href => "#"}
+            %span.float-left View Details
+            %span.float-right
+              %i.fa.fa-angle-right
+      .col-xl-3.col-sm-6.mb-3.text-center.my-auto
+        .h4.mb-0.text-primary= @orders.sum(:quantity)
+        .small.text-muted Flowers Ordered
+        %hr/
+    / Example DataTables Card
+    .card.mb-3
+      .card-header
+        %i.fa.fa-table
+        Orders
+      .card-body
+        .table-responsive
+          %table#datatable.table.table-bordered{:cellspacing => "0", :width => "100%"}
+            %thead
+              %tr
+                %th Name
+                %th Address
+                %th Email
+                %th Flower
+                %th Status
+                %th Update Status
+                %th Quantity
+                %th Price
+                %th Total
+            %tbody#data.list
+            /Show Data
+              = render "data"
+              %p.small.text-muted= Time.zone.now.strftime("%d/%m/%Y")
+      .card-footer.small.text-muted
+  %footer.sticky-footer
+    .container
+      .text-center
+        %small
+          Copyright © Order Flowers #{Time.now.year}
+  / Scroll to Top Button
+  %a.scroll-to-top.rounded{:href => "#page-top"}
+    %i.fa.fa-angle-up

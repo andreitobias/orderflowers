@@ -1,0 +1,20 @@
+- @orders.each do |order|
+  - if order.customer && order.flower
+    %tr
+      %td= order.customer.name
+      %td= order.customer.address
+      %td= order.customer.email
+      %td= order.flower.name
+      %td= order.status
+      %td
+        = form_for order, url: order_path(order), method: :put do |f|
+          = f.select :status, options_for_select(["Delivered", "Pending"]), {}, class: "form-control form-control-sm"
+          %br/
+          = f.submit "Update", method: :put, class: "btn btn-success btn-sm mt-2 mx-2"
+      %td= order.quantity
+      %td
+        = order.flower.price
+        USD
+      %td
+        = order.flower.price * order.quantity
+        USD
