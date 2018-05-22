@@ -1,22 +1,23 @@
 module Api 
     module V1
         class OrdersController < ApplicationController
+            include OrdersHelper
             def index
                 orders = Order.all
-                render json: {status: 'SUCCESS', message: 'Loaded all orders', data: orders}, status: :ok
+                render_success(orders)
             end
             def show
                 order = Order.find(params[:id])
-                render json: {status: 'SUCCESS', message: 'Loaded order', data: order}, status: :ok
+                render_success(order)
             end 
             def create
                 order = Order.new(order_params)
                 
-                if Flower.exists?(params[:flower_id]) && Customer.exists?(params[:customer_id])   
+                if order.flower_id <= Flower.count && order.customer_id <= Customer.count      
                     order.save
-                    render json: {status: 'SUCCESS', message: 'Order Created', data: order}, status: :ok
+                    render_success(order)
                 else
-                    render json: {status: 'ERROR', message: 'Order not Created. Please pick from existing flowers or customers', data: order.errors}, status: :unprocessable_entity
+                    render_failure(order)
                 end     
                   
             end    
@@ -24,9 +25,9 @@ module Api
             def update
                 order = Order.find(params[:id])
                 if order.update_attributes(update_params)
-                    render json: {status: 'SUCCESS', message: 'Updated order', data: order}, status: :ok
+                    render_success
                 else
-                    render json: {status: 'SUCCESS', message: 'Order not', data: order}, status: :unprocessable_entity
+                    render_failure
                 end    
             end
             
