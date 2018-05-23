@@ -7,6 +7,7 @@ gem 'rails', '4.2.5'
 group :production do
   gem 'pg', '0.20.0'
   gem 'rails_12factor'
+  gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 end
 
 # Use SCSS for stylesheets
