@@ -21,7 +21,7 @@
             .card-body-icon
               %i.fa.fa-fw.fa-support
             .mr-5
-              = @orders.where(status: 'pending').count
+              = @orders.where(status: 'Pending').count
               Pending Orders!
           %a.card-footer.text-white.clearfix.small.z-1{:href => "#"}
             %span.float-left View Details
