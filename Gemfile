@@ -7,7 +7,6 @@ gem 'rails', '4.2.5'
 group :production do
   gem 'pg', '0.20.0'
   gem 'rails_12factor'
-  gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 end
 
 # Use SCSS for stylesheets
@@ -20,7 +19,7 @@ gem 'coffee-rails', '~> 4.1.0'
 # gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
-gem 'jquery-rails'
+gem 'jquery-rails', '4.3.3'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -29,18 +28,17 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 #Use haml
-gem 'haml'
+gem 'haml', '5.0.4'
 #use html2haml
-gem 'html2haml'
+gem 'html2haml', '2.2.0'
 
 #Use Bootstrap
 gem 'bootstrap', '~> 4.1.1'
-#Use fast_jsonapi
-gem 'fast_jsonapi'
+
 #Use FontAwesome
-gem "font-awesome-rails"
+gem "font-awesome-rails", '4.7.0.4'
 #use Puma
-gem 'puma'
+gem 'puma', '3.11.4'
 #Use DataTables
 gem 'jquery-datatables-rails', '~> 3.4.0'
 
@@ -56,11 +54,11 @@ gem 'jquery-datatables-rails', '~> 3.4.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
+  gem 'byebug', '~> 10.0.2'
   gem 'rspec-rails', '~> 3.7'
   gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
   gem 'shoulda-matchers', '~> 3.1'
-  gem 'sqlite3'
+  gem 'sqlite3', '~> 1.3.13'
 end
 
 group :development do
